@@ -11,8 +11,19 @@ const server = http.createServer((req, res) => {
 	// cache, browser, accepted response type
 	// cookies
 	// http version etc
-	process.exit()
+	// process.exit()
+	res.setHeader('Content-Type', 'text/html')
+	res.write('<html>')
+	res.write('<head><title> Node page </title></head>')
+	res.write('<body><h1> Hello hows it going? </h1></body>')
+	res.write('</html>')
+	res.end()
+	//.end is the end of the data added to the response
+	// .write allows adding some data tp the respinse
+	// There is a set of supported headers for responses
 });
+
+//GET is the default method used if just entering a url in the browser
 
 server.listen(9000);
 
