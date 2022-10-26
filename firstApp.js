@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
 	console.log(req)
 });
 
-server.listen(3000);
+server.listen(9000);
 
 // Anoymous function... event driven node architecture
 
