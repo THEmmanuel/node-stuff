@@ -4,7 +4,13 @@ const http = require('http');
 // }
 
 const server = http.createServer((req, res) => {
-	console.log(req)
+	console.log(req.url, req.method, req.headers)
+	//This logs the request object to the console
+	//contains headers
+	// host the request was sent to
+	// cache, browser, accepted response type
+	// cookies
+	// http version etc
 	process.exit()
 });
 
