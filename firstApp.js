@@ -51,10 +51,18 @@ const server = http.createServer((req, res) => {
 		return req.on('end', () => {
 			const parsedBody = Buffer.concat(body).toString();
 			const message = parsedBody.split('=')[1]
-			fs.writeFileSync('message.txt', message)
-			res.statusCode = 302;
-			res.setHeader('Location', '/')
-			return res.end();
+			fs.writeFile('message.txt', message, (err) => {
+				res.statusCode = 302;
+				res.setHeader('Location', '/')
+				return res.end();
+			})
+			//  This differs from the writeFile with the sync standing for synchronous
+			//  The execution of the next line of code is blocked until the line of code is done running
+			// For a huge file, if the code execution is blocked synchronously, it blocks all requests to the server which isnt what we want
+			// WriteFile allows running async
+			// WriteFileSync runs synchronously
+			// Node implicitly registers a server for us
+			// Write file also accepts a call back function that should be executed when the process is done.
 		})
 		// The end event is fired once the incoming data has been parsed
 		// Node adds a new event listener internally to be triggered once the request is done being passed
