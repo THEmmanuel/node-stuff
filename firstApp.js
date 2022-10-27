@@ -39,7 +39,7 @@ const server = http.createServer((req, res) => {
 		return res.end()
 	}
 
-	if (url === '/message' && method === 'POST'){
+	if (url === '/message' && method === 'POST') {
 		const body = [];
 		req.on('data', (chunk) => {
 			console.log(chunk)
@@ -48,15 +48,19 @@ const server = http.createServer((req, res) => {
 		// On allows listen to events on request
 		// The data event is fired when there's a new chunk to be read
 
-		req.on('end', () => {
+		return req.on('end', () => {
 			const parsedBody = Buffer.concat(body).toString();
 			const message = parsedBody.split('=')[1]
 			fs.writeFileSync('message.txt', message)
+			res.statusCode = 302;
+			res.setHeader('Location', '/')
+			return res.end();
 		})
 		// The end event is fired once the incoming data has been parsed
-		res.statusCode = 302;
-		res.setHeader('Location', '/')
-		return res.end();
+		// Node adds a new event listener internally to be triggered once the request is done being passed
+		// The lines above are asynchronous, not executed immediately
+		// It's just a callback to be called at some point in the future
+		// Wait for the event loop, never block the event loop
 	}
 
 	res.setHeader('Content-Type', 'text/html')
