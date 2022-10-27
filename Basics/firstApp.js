@@ -74,3 +74,27 @@ server.listen(9000);
 // The pull phase... node js looks for neww io eveents
 // Node js executes all close event callbacks
 // exit the program if there is no process running
+
+// client => request => server => response => client... how the web works
+// Node js runs async/non blocking js code and uses abd event driven code (event loop) to run logic
+// A node program exits as soon as there isnt more work to do
+// The create server event never finishes executing by default
+
+// Asynchronous code
+// Js code is non blocking
+// Node uses callbacks and events... direct changes
+
+// Requests and responses
+// Parse request data in chunks
+// Streams and buffer
+// No double responses
+
+// Node has some core modules
+// Nod ejs ships with smultiple core modules... http, fs, path etc
+// Core modules can be imported to any file to be used there
+// Import via require(module)
+
+// Node module system
+// Import with require(./path-to-file) for custom modules
+// require('module') for core and third party modules
+// Export with module.exports (for multipkle exports)
