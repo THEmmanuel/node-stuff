@@ -15,7 +15,19 @@ const server = http.createServer((req, res) => {
 	// process.exit()
 
 	const url = req.url;
-	const method = req.method
+	const method = req.method;
+
+	// The incoming data is usually sent as a stream of data
+	//Streams and buffers
+	// A request is an ongoing process... the request is read by node in chunks
+	// In multiple parts and done at the end at some point
+	// For larger requests, streaming the data works better.
+	// The data can be read while it's still coming in as opposed to waiting for the full file before using it.
+	// This is how node handles all requests since its unknown how complex and big they are
+	// The problem with streaming is that the chunks cant be worked with arbitrarily
+	// The chunks are organized using buffers
+	// A buffer is like a bus stop
+	// A buffer is a construct that allows holding multiple chunks and work with them
 
 	if (url === '/') {
 		res.write('<html>')
@@ -28,7 +40,20 @@ const server = http.createServer((req, res) => {
 	}
 
 	if (url === '/message' && method === 'POST'){
-		fs.writeFileSync('message.txt', 'DUMMY')
+		const body = [];
+		req.on('data', (chunk) => {
+			console.log(chunk)
+			body.push(chunk)
+		});
+		// On allows listen to events on request
+		// The data event is fired when there's a new chunk to be read
+
+		req.on('end', () => {
+			const parsedBody = Buffer.concat(body).toString();
+			const message = parsedBody.split('=')[1]
+			fs.writeFileSync('message.txt', message)
+		})
+		// The end event is fired once the incoming data has been parsed
 		res.statusCode = 302;
 		res.setHeader('Location', '/')
 		return res.end();
