@@ -103,3 +103,26 @@ server.listen(9000);
 // Behind the scenes node still leverages on the operating system for multithreading
 
 // If you were to unregister, it would end
+
+// How node works behind the scenes
+// Node uses a single thread... a thread is a single operating system process
+// How is node able to handle multiple requests if we use one thread?
+// Files take longe because they are big and take longer for the request to complete
+
+// The event loop starts when the program starts
+// Handles event callbacks
+// The event loop only handdles callbacks with events that run quickly
+// Sends to worker pool --- different threads!
+// The worker on another thread handles the process... multithreading
+// sicne the event loop is responsible for the events, this is reflected in the event loop
+// Node will execute the appropriate callback
+
+// The event loop
+// The event loop is run or start by node js that keeps the process running and handles all the callbacks
+// The loop keeps on looping
+// Checks if theres any timer callbacks at the start of an iteration
+// Checks other callbacks... finished opeartions with callbacks etc
+//Other pending callbacks... execute i/o related callbacks that were defined
+// The pull phase... node js looks for neww io eveents
+// Node js executes all close event callbacks
+// exit the program if there is no process running
