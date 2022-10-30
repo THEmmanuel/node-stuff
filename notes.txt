@@ -14,3 +14,23 @@ npm... manages project and dependencies
 initialize projects, install third party packages
 
 3rd party packages installed with npm
+
+Express js
+Express js is a third party package and framwork
+Middleware
+Working with requests and responses
+Routing
+Returning html pages
+
+What is express js
+Writing server side logic is complex
+Express js helps focus on the business logic instead of the nitty gritty details
+Use a framwork for the heavy lifting
+
+Alternatives to express js
+Vanilla node js
+Adonis js
+Koa
+Sails js etc
+Express js is the most popular
+It's highly flexible
