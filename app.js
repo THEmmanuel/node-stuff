@@ -55,7 +55,7 @@ server.listen(9000);
 // How node works behind the scenes
 // Node uses a single thread... a thread is a single operating system process
 // How is node able to handle multiple requests if we use one thread?
-// Files take longe because they are big and take longer for the request to complete
+// Files take longer because they are big and take longer for the request to complete
 
 // The event loop starts when the program starts
 // Handles event callbacks
