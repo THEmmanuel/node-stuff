@@ -1,2 +1,9 @@
 Npm to install additional third party packeages
 can also be used to initialize the node project
+
+// nodemon allows running apps and restart the process if there is a change
+
+Error types... 
+Syntaxc Errors... typos, unclosed braces etc
+Runtime errors... not typos but executing a code that break when running
+Logical errors... not getting an error message. App dosent run the way it should
