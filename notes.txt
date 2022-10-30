@@ -1,0 +1,2 @@
+Npm to install additional third party packeages
+can also be used to initialize the node project
