@@ -98,3 +98,5 @@ server.listen(9000);
 // Import with require(./path-to-file) for custom modules
 // require('module') for core and third party modules
 // Export with module.exports (for multipkle exports)
+
+// nodemon allows running apps and restart the process if there is a change
