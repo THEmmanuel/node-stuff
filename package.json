@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start": "node app.js",
-	"start-server": "node app.js"
+    "start": "node app.js",
+    "start-server": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/THEmmanuel/node-stuff/issues"
   },
-  "homepage": "https://github.com/THEmmanuel/node-stuff#readme"
+  "homepage": "https://github.com/THEmmanuel/node-stuff#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
