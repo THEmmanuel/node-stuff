@@ -9,3 +9,8 @@ Runtime errors... not typos but executing a code that break when running
 Logical errors... not getting an error message. App dosent run the way it should
 
 Logical errors are usually the most difficult to fix
+
+npm... manages project and dependencies
+initialize projects, install third party packages
+
+3rd party packages installed with npm
