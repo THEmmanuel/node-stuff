@@ -34,3 +34,9 @@ Koa
 Sails js etc
 Express js is the most popular
 It's highly flexible
+
+Express js is all about middleware
+Middleware means that an incoming request is funneled through a bunch of functions by express. Instead of having having just one request handler.
+This allows splitting code into muultiple files
+
+This is a core concept of express js
