@@ -1,4 +1,3 @@
-const http = require('http');
 const express = require('express')
 
 const app = express();
@@ -19,6 +18,4 @@ app.use((req, res, next) => {
 // Middleware: Add functions hooked into a funnel through which the request goes.
 
 
-const server = http.createServer(app);
-
-server.listen(9000);
+app.listen(9000);
