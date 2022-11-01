@@ -14,10 +14,12 @@ app.use('/add-product', (req, res, next) => {
 	res.send('<form action = "/product" method = "POST"><input type = "text" name = "title"/><button type = "submit"> Add product<button/></form>'); 
 })
 
-app.use('/product', (req, res, next) => {
+app.get('/product', (req, res, next) => {
 	console.log(req.body)
 	res.redirect('/');
 })
+// app.get fires only for get requests, post() for post requests
+// there's also delete(), patch() and put()
 
 app.use('/', (req, res, next) => {
 	console.log('in another middleware')
