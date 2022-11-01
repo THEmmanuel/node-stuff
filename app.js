@@ -1,15 +1,22 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 
 const app = express();
 // Express exprts a function by default
 
-app.use('/', (req, res, next) => {
-	console.log('this always runs')
-})
+app.use(bodyParser.urlencoded({
+	extended: false
+}));
+// Registers a middleware that parses the requests sent.
 
 app.use('/add-product', (req, res, next) => {
 	console.log('in another middleware')
-	res.send('<h1>Add product</h1>'); 
+	res.send('<form action = "/product" method = "POST"><input type = "text" name = "title"/><button type = "submit"> Add product<button/></form>'); 
+})
+
+app.use('/product', (req, res, next) => {
+	console.log(req.body)
+	res.redirect('/');
 })
 
 app.use('/', (req, res, next) => {
