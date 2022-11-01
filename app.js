@@ -25,3 +25,6 @@ app.use((req, res, next) => {
 // Middleware: Add functions hooked into a funnel through which the request goes.
 
 app.listen(9000);
+
+// module.exports = path.dirname(process.mainModule.filename);
+// module.exports = path.dirname(require.main.filename);
