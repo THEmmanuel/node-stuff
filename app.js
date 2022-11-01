@@ -14,6 +14,11 @@ app.use(bodyParser.urlencoded({
 // there's also delete(), patch() and put()
 
 app.use(adminRoutes);
+app.use(shopRoutes);
+
+app.use((req, res, next) => {
+	res.status(404).send('<h1> Page not found </h1>')
+})
 // use allows to add a new middleware function
 // Accepts an array of request handlers
 // Middleware: Add functions hooked into a funnel through which the request goes.
