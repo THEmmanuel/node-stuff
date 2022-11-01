@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 // app.get fires only for get requests, post() for post requests
 // there's also delete(), patch() and put()
 
-app.use(adminRoutes);
+app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
