@@ -43,3 +43,16 @@ This is a core concept of express js
 
 Static file serving means not handled by the express router or middleware but instead directly forwarded to the file system.
 
+Node js with express adds a bunch of utility functions
+Express js is a node js framework -  a package that adds a bunch of utility functions and a clear set of rules on how the app should be built
+
+Other packages can be added middleware
+
+Express relies on middleware functions that can be added by calling use()
+
+Niddleware functions handle a request and should call next() to the next function or send a response
+
+Routing to filter requests by path and method
+Filter by method matches path exactly, otherwise the first segment of a URL is matched
+
+Static serving with the aidof express.static()
