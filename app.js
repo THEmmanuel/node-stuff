@@ -2,7 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const path = require('path');
 const adminRoutes = require('./routes/admin')
-const shopRoutes = require('./routes/shop')
+const shopRoutes = require('./routes/shop');
+// const { dirname } = require('path');
 
 const app = express();
 // Express exprts a function by default
@@ -10,6 +11,9 @@ const app = express();
 app.use(bodyParser.urlencoded({
 	extended: false
 }));
+app.use(express.static(path.join(__dirname, 'public')));
+// Multiple static folders can be added until the desired on is added 
+
 // Registers a middleware that parses the requests sent.
 // app.get fires only for get requests, post() for post requests
 // there's also delete(), patch() and put()

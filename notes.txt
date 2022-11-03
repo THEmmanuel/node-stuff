@@ -40,3 +40,6 @@ Middleware means that an incoming request is funneled through a bunch of functio
 This allows splitting code into muultiple files
 
 This is a core concept of express js
+
+Static file serving means not handled by the express router or middleware but instead directly forwarded to the file system.
+
