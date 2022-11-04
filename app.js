@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const path = require('path');
-const adminRoutes = require('./routes/admin')
+const adminData = require('./routes/admin')
 const shopRoutes = require('./routes/shop');
 // const { dirname } = require('path');
 
@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.get fires only for get requests, post() for post requests
 // there's also delete(), patch() and put()
 
-app.use('/admin', adminRoutes);
+app.use('/admin', adminData.routes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {

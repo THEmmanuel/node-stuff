@@ -1,0 +1,6 @@
+In real applications, we dont just return static html pages
+Its common to have some data managed on the server/database
+
+Managing data (Without a database for now)
+Render dynamic content in our views
+Understanding templating engines
