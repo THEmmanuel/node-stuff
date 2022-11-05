@@ -4,3 +4,29 @@ Its common to have some data managed on the server/database
 Managing data (Without a database for now)
 Render dynamic content in our views
 Understanding templating engines
+
+Templating engines
+For putting dynamic content into html pages, we'll use templating engines.
+
+How templating enhgines works
+There's an HTML-ish template with a lot of html structure and markup
+This includes some blanks and placeholders etc
+There's also some node/express content
+
+A templating engine that understands a certain syntax that it uses to replace placeholders or certain snippets. This is contextual
+The content is generated on the fly by the templating engine, taking the dynamic content into account
+
+The result will be a dynamic html page that's dynamic and generated on the fly
+
+Templating engines: EJS, Pug(jade), Hanldebars
+
+EJS short syntax: <p><%= name %></p>
+Normal html and plain javascript in templates
+
+Pug: p #{name}
+Pug dosent use real html, it replaces this with a minimized version or a minimal version
+minimal html and custom html template language
+
+Handlebars: <p>{{name}}</p>
+Handlebars uses real html with double curly braces to mark placeholders for dynamic content
+handlebars uses Normal html and a custom language template
